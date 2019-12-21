@@ -5,10 +5,21 @@ body{
     overflow-x: hidden;
     font-family:  'lato',sans-serif;
     color: #505962;
+    background: black;
 
+}
+/* Change the color in the stroke property of the image data */
+.custom-toggler .navbar-toggler-icon {
+background-image: url(“data:image/svg+xml;charset=utf8, %3Csvg viewBox=’0 0 32 32′ xmlns=’http://www.w3.org/2000/svg’%3E%3Cpath stroke=’rgba(0, 128, 0, 0.8)’ stroke-width=’2′ stroke-linecap=’round’ stroke-miterlimit=’10’ d=’M4 8h24M4 16h24M4 24h24’/%3E%3C/svg%3E”);
+}
+/*end change*/
+
+.custom-toggler.navbar-toggler{
+   border-color: white;
 }
 .navbar{
     background:rgba(0,0,0,0.6);
+    height:9vh;
 
 }
 .navbar-brand img{
@@ -22,11 +33,25 @@ body{
     background-color:rgba(0,0,0,0.2);
 }
 
-.caption{
+.left{
     position: absolute;
-    top:38%;
-    width: 100%;
+    top:9%;
+    width: 50%;
+    height:91vh;
+    padding:100px;
+    left: 0;
     color: white;
+    border: 1px solid white;
+}
+.right{
+    position: absolute;
+    top:9%;
+    width: 50%;
+    height:91vh;
+    padding:100px;
+    right: 0;
+    color: white;
+    border: 1px solid white;
 }
 
 .caption h1{
@@ -167,3 +192,6 @@ video{
   transition: 1s opacity;
 }
 /*end fixed*/
+::-webkit-scrollbar {
+    display: none;
+}
