@@ -152,11 +152,11 @@ $(function () {
 });
 //date picking 
 $(function () {
-    $("#departDate").datepicker({
+     $("#departDate").datepicker({
         showAnim: 'drop',
         numberOfMonths: 1,
         minDate: new Date(),
-        dateFormat: 'dd/mm/yy',
+        dateFormat: 'D, dd M yy',
         onClose: function (selectdate) {
             var dt = new Date(selectdate);
             dt.setDate(dt.getDate() + 1);
@@ -167,7 +167,7 @@ $(function () {
         showAnim: 'drop',
         numberOfMonths: 1,
         minDate: new Date(),
-        dateFormat: 'dd/mm/yy',
+        dateFormat: 'D, dd M yy',
 
         onClose: function (selectdate) {
             var dt = new Date(selectdate);
