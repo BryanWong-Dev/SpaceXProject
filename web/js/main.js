@@ -1,3 +1,6 @@
+
+
+
 (function ($) {
     $.fn.niceNumber = function (options) {
         var settings = $.extend({
@@ -153,7 +156,7 @@ $(function () {
         showAnim: 'drop',
         numberOfMonths: 1,
         minDate: new Date(),
-        dateFormat: 'D, dd M yy',
+        dateFormat: 'dd/mm/yy',
         onClose: function (selectdate) {
             var dt = new Date(selectdate);
             dt.setDate(dt.getDate() + 1);
@@ -164,7 +167,7 @@ $(function () {
         showAnim: 'drop',
         numberOfMonths: 1,
         minDate: new Date(),
-        dateFormat: 'D, dd M yy',
+        dateFormat: 'dd/mm/yy',
 
         onClose: function (selectdate) {
             var dt = new Date(selectdate);

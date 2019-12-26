@@ -1,7 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body{
     margin: 0;
     padding: 0;
-
+    /*position: relative;*/
     overflow-x: hidden;
     font-family:  'lato',sans-serif;
     color: #505962;
@@ -25,6 +29,12 @@ body{
     min-height: 100vh;
     background-color:rgba(0,0,0,0.2);
 }
+
+.nav-item{
+    border:1px solid white;
+    margin-right: 20px;
+}
+
 /*left*/
 
 .left-panel{
@@ -41,18 +51,32 @@ body{
     background: rgba(4, 4, 4, 0.56);
     -webkit-box-shadow: 0px 35px 44px -22px rgba(0,0,0,0.72);
     -moz-box-shadow: 0px 35px 44px -22px rgba(0,0,0,0.72);
-    box-shadow: 0px 35px 44px -22px #1f181b;
+    /*box-shadow: 0px 35px 44px -22px #1f181b;*/
     width: 70%;
     margin-left:15%;
-    margin-top: 10%;
+    margin-top: 5%;
     padding-top: 3%;
-    height: 85%;
+    height: 90%;
+    border-radius: 50px;
+    box-shadow: 0 0 8px #cccccc, inset 0 0 8px #cccccc;
+    -webkit-animation: pulse 2s linear 1s infinite;
 }
-.flight-form form div{
+@-webkit-keyframes pulse {
+    0% { box-shadow:0 0 8px #cccccc, inset 0 0 8px #cccccc; }
+    25% { box-shadow:0 0 10px #e5e5e5, inset 0 0 10px #e5e5e5; }
+    50% { box-shadow:0 0 12px #ffffff, inset 0 0 12px #ffffff; }
+    75% { box-shadow:0 0 10px #e5e5e5, inset 0 0 10px #e5e5e5; }
+    100% { box-shadow:0 0 8px #cccccc, inset 0 0 8px #cccccc; }
+}
+.flight-form h2{
+    margin-bottom: 3%;
+}
+.internal-flight-form{
     width: 100%;
     /*border:1px solid white;*/
     margin:0;
     padding:0;
+    height:100%;
 }
 .title{
     width: 40%;
@@ -66,9 +90,13 @@ body{
     border-radius:5px;
     outline: none;
     width: 50%;
+    height:100%;
     margin:0;
+    margin-top: 1%;
     margin-right: 10%;
     padding:0;
+
+
     vertical-align: middle;
     text-align-last: center;
     text-align: center;
@@ -81,9 +109,22 @@ body{
 
 }*/
 .numberbox{
+    /*width: 50%;*/
+    /*left: 100px;*/
+    border:none;
+    border-radius:5px;
+    outline: none;
     width: 50%;
-    left: 100px;
+    height:100%;
 
+    margin:0;
+    margin-right: 10%;
+    padding:0;
+    vertical-align: middle;
+    text-align-last: center;
+    text-align: center;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
 
 }
 .ui-datepicker { 
@@ -98,7 +139,7 @@ body{
 .inputWithPlane i {
     position: absolute;
     right:11% ;
-    top: 6%;
+    top: 20%;
     float: right;
     color: #aaa;
     /*color: white;*/
@@ -113,8 +154,8 @@ body{
 
 .inputWithCalendar i {
     position: absolute;
-    right:12% ;
-    top: 6%;
+    right:11% ;
+    top: 19%;
     float: right;
     color: #aaa;
     transition: 0.3s;
@@ -123,18 +164,26 @@ body{
 
 }
 
-.adultTitle{
-    margin-right: 6.25%;
-    margin-left: 6.25%;
+/*.adultTitle{
+        margin-right: 6.25%;
+        margin-left: 6.25%;
+        width: 40%;
     width: 40%;
-}
+    border:1px solid white;
+    margin:0;
+    padding:0;
+}*/
+.adult div{
+    /*border:1px solid white;*/
 
+}
 .adult input{
     border:none;
     outline: none;
     padding:5px;
     width:58%;
-    border-radius: 10px;
+    height: 100%;
+    border-radius: 5px;
     margin: 0 5px!important;
     box-shadow: 0 2px 5px rgba(0,0,0,.5);
 
@@ -148,13 +197,16 @@ body{
     outline: none;
     padding: 0 10px;
     border-radius: 5px;
-    width: 10%;
+    width: 15%;
 
 
 }
 .nice-number {
     display: inline-flex;
     justify-content: stretch;
+    width: 100%;
+    margin-top: 1%;
+
 }
 
 .nice-number input {
@@ -174,7 +226,6 @@ body{
 }
 
 
-
 /*end left*/ 
 .right{
     position: absolute;
@@ -184,7 +235,7 @@ body{
     padding:100px;
     right: 0;
     color: white;
-    border: 1px solid white;
+    /*border: 1px solid white;*/
 }
 .bottom{
     position: absolute;
@@ -194,7 +245,6 @@ body{
     padding:100px;
     right: 0;
     color: white;
-    border: 1px solid white;
 }
 
 .caption h1{
@@ -227,7 +277,7 @@ body{
 .col-md-8 h1 {
     font-size: 2.4rem;
 }
-.btn-secondary {
+/*.btn-secondary {
     border-width: medium;
     border-radius: 0;
     padding: .6rem 1.2rem;
@@ -243,7 +293,7 @@ body{
     border-color: #189582;
     background-color: #189582;
     color: white;
-}
+}*/
 @media ( max-width: 768px){
 
     .caption h1{
@@ -263,10 +313,25 @@ body{
         font-size: 2.4rem;
     }
 }
-#section,#section2{
+#section1,#section2,#section3{
     height: 100vh;
     width: 100%;
 
+}
+/*
+.fa-redo:hover,.fa-redo:focus{
+    
+   
+    border:none;
+    outline: none;
+}*/
+
+.fa-redo{
+    width: 7%;
+    margin-left: 5%;
+    border:none;
+    border-radius: 5px;
+    outline: none;
 }
 
 
@@ -338,3 +403,44 @@ video{
 ::-webkit-scrollbar {
     display: none;
 }
+/*start botom arrow*/
+.box {
+    margin-left:50%;
+    width:20px;
+    height:20px;
+
+}
+.box span{
+    display: block;
+    width:100%;
+    height:100%;
+    border-bottom: 2px solid #fff;
+    border-right:2px solid #fff;
+    transform: rotate(45deg);
+    margin:-10px;
+    animation:dropArrow 2s infinite;
+
+}
+.box span:nth-child(2){
+    animation-delay: -0.2s;
+
+}
+.box span:nth-child(3){
+    animation-delay: -0.4s;
+}
+@keyframes dropArrow {
+    0%{
+        opacity:0;
+        transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;       
+        transform: rotate(45deg) translate(20px,20px);
+    }
+}
+
+
+/*end  botom arrow*/ 
