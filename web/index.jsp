@@ -118,7 +118,7 @@
                         <div class="d-flex mb-3 internal-flight-form form-group inputWithCalendar">
                             <label for="departDate" class="p-2 title">Depart Date</label>
                             <label for="departDate" class="p-2 ">:</label>
-                            <input class="p-2 flex-grow-1 form-control " placeholder="dd/mm/yy     "type ="text" name="departDate" id="departDate" required/>
+                            <input class="p-2 flex-grow-1 form-control " placeholder="dd/mm/yy     " type ="text" name="departDate" id="departDate" required/>
                             <i class="far fa-calendar-alt"></i>
                         </div>
 
