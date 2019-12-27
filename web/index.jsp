@@ -51,12 +51,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#section3">Section3</a>
                         </li>    
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Register</a>
-                        </li>    
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Log In</a>
-                        </li>    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                Log In<i class="far fa-user" style="margin-left: 10%;"></i>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Staff</a>
+                                <a class="dropdown-item" href="#">Member</a>
+                            </div>
+                        </li>   
                     </ul>
                 </div>  
             </div>
@@ -79,59 +82,67 @@
                     <form action="#" method="GET" >
                         <div class="d-flex mb-3 internal-flight-form form-group inputWithPlane">
                             <label for="from" class="p-2 title">From</label>
-                            <label for="from" class="p-2 ">:</label>
+                            <label for="from" class="p-2 midle">:</label>
                             <!--<input class="p-2 flex-grow-1 form-control " placeholder="Malaysia" type ="text" name="from" id="from" required/>-->
-                            <select class="form-control p-2 flex-grow-1 form-control " name="from" id="from" required>
-                                <%
-                                    String[] locations = {"Algeria", "Argentina", "Australia", "Austria", "Bangladesh", "Belgium", "Brazil", "Canada", "Chile", "China", "Colombia", "Czech Republic", "Denmark", "Egypt", "Finland", "France", "Germany", "Hong Kong SAR", "India", "Indonesia", "Iraq", "Ireland", "Islamic Republic of Iran", "Israel", "Italy", "Japan", "Kazakhstan", "Korea", "Malaysia", "Mexico", "Netherlands", "Nigeria", "Norway", "Pakistan", "Peru", "Philippines", "Poland", "Portugal", "Romania", "Russia", "Saudi Arabia", "Singapore", "South Africa", "Spain", "Sweden", "Switzerland", "Taiwan Province of China", "Thailand", "Turkey", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Vietnam"
-                                    };
-//TODOOOOOO LINK DATABASE GET LOCATIONS
-                                    for (int i = 0; i < locations.length; i++) {
-                                %>
-                                <option><%= locations[i]%></option> 
-                                <%
-                                    }
-                                %>
-                            </select>
-                            <!--<i class="fas fa-plane-departure"></i>-->
-                           <i class="fas fa-rocket"></i>
+                            <div class="internal-flight-form-box"> 
+                                <select class="form-control p-2 flex-grow-1" name="from" id="from" required>
+                                    <%
+                                        String[] locations = {"Algeria", "Argentina", "Australia", "Austria", "Bangladesh", "Belgium", "Brazil", "Canada", "Chile", "China", "Colombia", "Czech Republic", "Denmark", "Egypt", "Finland", "France", "Germany", "Hong Kong SAR", "India", "Indonesia", "Iraq", "Ireland", "Islamic Republic of Iran", "Israel", "Italy", "Japan", "Kazakhstan", "Korea", "Malaysia", "Mexico", "Netherlands", "Nigeria", "Norway", "Pakistan", "Peru", "Philippines", "Poland", "Portugal", "Romania", "Russia", "Saudi Arabia", "Singapore", "South Africa", "Spain", "Sweden", "Switzerland", "Taiwan Province of China", "Thailand", "Turkey", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Vietnam"
+                                        };
+                                        //TODOOOOOO LINK DATABASE GET LOCATIONS
+                                        for (int i = 0; i < locations.length; i++) {
+                                    %>
+                                    <option><%= locations[i]%></option> 
+                                    <%
+                                        }
+                                    %>
+                                </select>
+                                <!--<i class="fas fa-plane-departure"></i>-->
+                                <i class="fas fa-rocket"></i>
+                            </div>
                         </div>
 
                         <div class="d-flex mb-3 internal-flight-form form-group inputWithPlane">
                             <label for="destination" class="p-2 title">Destination</label>
-                            <label for="destination" class="p-2 ">:</label>
+                            <label for="destination" class="p-2 midle">:</label>
                             <!--<input class="p-2 flex-grow-1 form-control " type ="text" name="destination" id="destination" required/>-->
-                            <select class="form-control p-2 flex-grow-1 form-control "  name="from" id="from" required>
-                                <%
-                                    //TODOOO LINK DATABASE GET LOCATIONS
-                                    for (int i = 0; i < locations.length; i++) {
-                                %>
-                                <option><%= locations[i]%></option> 
-                                <%
-                                    }
-                                %>
-                            </select>
-                            <!--<i class="fas fa-plane-arrival"></i>-->
-                            <i class="fas fa-rocket" style="transform: rotate(90deg);"></i>
+                            <div class="internal-flight-form-box">
+                                <select class="form-control p-2 flex-grow-1"  name="from" id="from" required>
+                                    <%
+                                        //TODOOO LINK DATABASE GET LOCATIONS
+                                        for (int i = 0; i < locations.length; i++) {
+                                    %>
+                                    <option><%= locations[i]%></option> 
+                                    <%
+                                        }
+                                    %>
+                                </select>
+                                <i class="fas fa-rocket" style="transform: rotate(90deg);"></i>
+                            </div>
+
                         </div>
 
                         <div class="d-flex mb-3 internal-flight-form form-group inputWithCalendar">
                             <label for="departDate" class="p-2 title">Depart Date</label>
-                            <label for="departDate" class="p-2 ">:</label>
-                            <input class="p-2 flex-grow-1 form-control " placeholder="dd/mm/yy     " type ="text" name="departDate" id="departDate" required/>
-                            <i class="far fa-calendar-alt"></i>
+                            <label for="departDate" class="p-2 midle">:</label>
+                            <div class="internal-flight-form-box">
+                                <input class="p-2 flex-grow-1 form-control " placeholder="dd/mm/yy" type ="text" name="departDate" id="departDate" required/>
+                                <i class="far fa-calendar-alt"></i>
+                            </div>
                         </div>
 
                         <div class="d-flex mb-3 internal-flight-form form-group inputWithCalendar">
                             <label for="returnDate" class="p-2 title ">Return Date</label>
-                            <label for="returnDate" class="p-2 ">:</label>
-                            <input class="p-2 flex-grow-1 form-control  " placeholder="Ignore for One Way Trip          " type="text" name="returnDate" id="returnDate" />
-                            <i class="far fa-calendar-alt"></i>
+                            <label for="returnDate" class="p-2 midle">:</label>
+                            <div class="internal-flight-form-box">
+                                <input class="p-2 flex-grow-1 form-control  " placeholder="Ignore for One Way Trip" type="text" name="returnDate" id="returnDate" />
+                                <i class="far fa-calendar-alt"></i>
+                            </div>
                         </div>
 
                         <div  class="d-flex mb-3 internal-flight-form adult">
                             <label for="quantity" class="p-2 title">Adult</label>
-                            <label for="quantity" class="p-2 ">:</label>
+                            <label for="quantity" class="p-2 midle">:</label>
                             <div class="numberbox  ">
                                 <input  class="p-2 flex-grow-1 form-control  " placeholder="1" name="quantity" id="quantity" required type="number" value="" min="1" max="20"/>
                             </div>
@@ -146,11 +157,11 @@
             </div>
 
             <div class="p-2 right text-center">
-                
+
                 Flex item 2
-            
-            
-            
+
+
+
             </div>
 
             <div class="p-2 bottom text-center justify-content-center">
@@ -165,16 +176,16 @@
         </div>
 
 
-       
-<!--------------------------end of section1-------------------------------------------------->
+
+        <!--------------------------end of section1-------------------------------------------------->
 
 
 
 
 
 
-<!-------------------------start of section2-------------------------------------------------->
-     
+        <!-------------------------start of section2-------------------------------------------------->
+
         <div id="section2" class="container-fluid row justify-content-center">
             <div class="col-md-8 text-center">
                 <h1>section2</h1>
@@ -182,11 +193,11 @@
                 <a class="btn btn-secondary btn-sm" href="#section3" >go next</a>
             </div>
         </div>
-      
-<!--------------------------end of section2-------------------------------------------------->
 
-<!--------------------------start of section3-------------------------------------------------->
-        
+        <!--------------------------end of section2-------------------------------------------------->
+
+        <!--------------------------start of section3-------------------------------------------------->
+
         <div id="section3" class="container-fluid row justify-content-center">
             <div class="col-md-8 text-center">
                 <h1>section3</h1>
@@ -194,8 +205,8 @@
                 <a class="btn btn-secondary btn-sm" href="#" >go next</a>
             </div>
         </div>
-        
-<!--------------------------end of section3-------------------------------------------------->
+
+        <!--------------------------end of section3-------------------------------------------------->
 
 
     </body>
