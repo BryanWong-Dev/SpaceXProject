@@ -69,7 +69,7 @@
             <div class="video-wrap">
                 <div id="video">
                     <video id="bgvid" autoplay loop muted>
-                        <source src="media/StarshipEarth2Earth_1.mp4" type="video/mp4">
+                        <source src="media/StarshipEarth2Earth_3.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
@@ -157,9 +157,13 @@
             </div>
 
             <div class="p-2 right text-center">
+<br>
+                <br>
+                <br>
 
-                Flex item 2
+                <h1>Revolutionize Air Transportation</h1>
 
+                <h2>The Future is Now</h2>
 
 
             </div>

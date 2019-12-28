@@ -1,65 +1,106 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package da;
 
-public class location {
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
-    private String id, city, country;
-    private double latitude, longitude;
 
-    public location() {
+@Entity
+@Table(name = "LOCATION")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "LOCATION.findAll", query = "SELECT s FROM LOCATION s")
+    , @NamedQuery(name = "LOCATION.findByLOCATION_ID", query = "SELECT s FROM LOCATION s WHERE s.LOCATION_ID = :LOCATION_ID")
+    , @NamedQuery(name = "LOCATION.findByCITY", query = "SELECT s FROM LOCATION s WHERE s.CITY = :CITY")
+    , @NamedQuery(name = "LOCATION.findByCOUNTRY", query = "SELECT s FROM LOCATION s WHERE s.COUNTRY = :COUNTRY")
+    , @NamedQuery(name = "LOCATION.findByLATITUDE", query = "SELECT s FROM LOCATION s WHERE s.LATITUDE = :LATITUDE")
+    , @NamedQuery(name = "LOCATION.findByLONGTITUDE", query = "SELECT s FROM LOCATION s WHERE s.LONGTITUDE = :LONGTITUDE")
+})
+public class location implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 5)
+    @Column(name = "STAFF_ID")
+    private String staffId;
+    @Size(max = 50)
+    @Column(name = "PASSWORD")
+    private String password;
+    @Size(max = 50)
+    @Column(name = "POSITION")
+    private String position;
+
+    public Staff() {
     }
 
-    public location(String id, String city, String country, double latitude, double longitude) {
-        this.id = id;
-        this.city = city;
-        this.country = country;
-        this.latitude = latitude;
-        this.longitude = longitude;
+    public Staff(String staffId) {
+        this.staffId = staffId;
     }
 
-    public String getId() {
-        return id;
+    public String getStaffId() {
+        return staffId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setStaffId(String staffId) {
+        this.staffId = staffId;
     }
 
-    public String getCity() {
-        return city;
+    public String getPassword() {
+        return password;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getCountry() {
-        return country;
+    public String getPosition() {
+        return position;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setPosition(String position) {
+        this.position = position;
     }
 
-    public double getLatitude() {
-        return latitude;
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (staffId != null ? staffId.hashCode() : 0);
+        return hash;
     }
 
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Staff)) {
+            return false;
+        }
+        Staff other = (Staff) object;
+        if ((this.staffId == null && other.staffId != null) || (this.staffId != null && !this.staffId.equals(other.staffId))) {
+            return false;
+        }
+        return true;
     }
 
     @Override
     public String toString() {
-        return "location{" + "id=" + id + ", city=" + city + ", country=" + country + ", latitude=" + latitude + ", longitude=" + longitude + '}';
+        return "model.Staff[ staffId=" + staffId + " ]";
     }
-
+    
 }
+
 
